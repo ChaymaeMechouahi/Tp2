@@ -14,15 +14,15 @@ public class Examen
 {
 	private DateTime dateexam;
 	private String examde;
-	private DateTime datefin;
+	private int duration;
 	private int e_nbrequestion;
 	private int e_note;
 	
-	public Examen(DateTime date, String de, DateTime fin,int question , int note)//constructeur
+	public Examen(DateTime date, String de,int fin,int question , int note)//constructeur
     {  		
 		dateexam = date;
 		de = examde;
-		datefin = fin;
+		duration = fin;
 		e_nbrequestion = question;
 		e_note = note;
 			
@@ -40,10 +40,10 @@ public class Examen
         get { return examde ;}
         set { examde = value; }
     }
-	public DateTime Datefin //setters getters datefin
+	public int Duree //setters getters duree
     {
-		get { return datefin; }
-		set { datefin = value; }
+		get { return duration; }
+		set { duration= value; }
     } 
 	public int Nbrequestion//setters getters nbrequestion
     {
@@ -65,35 +65,42 @@ public class Examen
 	public class QCM : Question //inheritance
 	{
 		private int nbreproposition;
-		private int nbrepropojuste;		
+		private int nbrepropojuste;
+		private string proposition;
 	}
 	public class VraiFaux : Question //inheritance
 	{
-		//attribut && méthode
-	}
-	public class QuestionIndirect : Question //inheritance
+        ////attribut  && méthode
+    }
+    public class QuestionIndirect : Question //inheritance
 	{
 		//attribut  && méthode
 	}
-	public class CopieEtudiant
+	public class Prof
 	{
-		private string nom;
-		private ReponseEtudiant reponse = new ReponseEtudiant();
-	}
-	public abstract class ReponseEtudiant
-    {
-		//attributs && méthode
+		private string p_nom ;
+		private int p_id; 
+		private string p_matiere;
+		public Prof(string nom , int id , string matiere )
+		{
+			this.p_nom = nom ;
+			this.p_id = id;
+			this.p_matiere = matiere ;
+		}
+        public int Id//setters getters nbrequestion
+        {
+            get { return p_id; }
+            set { p_id = value; }
+        }
+        public string Nom//setters getters nbrequestion
+        {
+            get { return p_nom ; }
+            set { p_nom = value; }
+        }
+        public string matiere//setters getters nbrequestion
+        {
+            get { return p_matiere; }
+            set { p_matiere = value; }
+        }
     }
-    public class ReponseEINd : ReponseEtudiant
-	{
-		//attributs && méthode
-	}
-	public class EVF : ReponseEtudiant
-	{
-		//attributs && méthode
-	}
-	public class EQCM : ReponseEtudiant
-	{
-		//attributs && méthode
-	}
 }
