@@ -62,11 +62,16 @@ public class Examen
 		private string txtquestion;
 		private int note;
 	}
-	public class QCM : Question //inheritance
+    public class Proposition
+    {
+        private string txtproposition;
+        private int reference;
+        //methods
+    }
+    public class QCM : Question //inheritance
 	{
 		private int nbreproposition;
-		private int nbrepropojuste;
-		private string proposition;
+		
 	}
 	public class VraiFaux : Question //inheritance
 	{
@@ -76,31 +81,20 @@ public class Examen
 	{
 		//attribut  && méthode
 	}
-	public class Prof
+	public class Etudiant
 	{
-		private string p_nom ;
-		private int p_id; 
-		private string p_matiere;
-		public Prof(string nom , int id , string matiere )
+		private string e_nom;
+
+		public PEtudiant(string nom)
 		{
-			this.p_nom = nom ;
-			this.p_id = id;
-			this.p_matiere = matiere ;
+			this.e_nom = nom;
+
 		}
-        public int Id//setters getters nbrequestion
-        {
-            get { return p_id; }
-            set { p_id = value; }
-        }
-        public string Nom//setters getters nbrequestion
-        {
-            get { return p_nom ; }
-            set { p_nom = value; }
-        }
-        public string matiere//setters getters nbrequestion
-        {
-            get { return p_matiere; }
-            set { p_matiere = value; }
-        }
-    }
+
+		public string Nom//setters getters nbrequestion
+		{
+			get { return e_nom; }
+			set { e_nom = value; }
+		}
+	} 
 }
