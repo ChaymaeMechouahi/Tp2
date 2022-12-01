@@ -85,7 +85,7 @@ public class Examen
 	{
 		private string e_nom;
 
-		public PEtudiant(string nom)
+		public Etudiant(string nom)
 		{
 			this.e_nom = nom;
 
@@ -97,4 +97,8 @@ public class Examen
 			set { e_nom = value; }
 		}
 	} 
+	public class Reponse
+	{
+		private int certitude;
+	}
 }
